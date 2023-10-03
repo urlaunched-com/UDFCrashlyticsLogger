@@ -6,7 +6,8 @@ import PackageDescription
 let package = Package(
     name: "UDFCrashlyticsLogger",
     platforms: [
-        .iOS(.v16)
+        .iOS(.v16),
+        .macOS(.v11)
     ],
     products: [
         .library(
@@ -15,7 +16,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/Maks-Jago/SwiftUI-UDF", from: "1.4.1-alpha.5"),
+        .package(url: "https://github.com/Maks-Jago/SwiftUI-UDF", from: "1.4.1-alpha.6"),
         .package(url: "https://github.com/firebase/firebase-ios-sdk", from: "10.0.0")
     ],
     targets: [

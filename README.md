@@ -1,2 +1,3 @@
 # UDFCrashlyticsLogger
-SwiftUI-UDF Crashlytics Logger
+
+A custom SwiftUI-UDF logger for logging actions to FirebaseCrashlytics.
