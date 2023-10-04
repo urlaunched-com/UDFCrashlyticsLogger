@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "UDFCrashlyticsLogger",
     platforms: [
-        .iOS(.v16),
+        .iOS(.v15),
         .macOS(.v11)
     ],
     products: [
