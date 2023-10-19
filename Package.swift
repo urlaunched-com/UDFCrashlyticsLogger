@@ -16,7 +16,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/Maks-Jago/SwiftUI-UDF", from: "1.4.1-alpha.6"),
+        .package(url: "https://github.com/Maks-Jago/SwiftUI-UDF", from: "1.4.0"),
         .package(url: "https://github.com/firebase/firebase-ios-sdk", from: "10.0.0")
     ],
     targets: [
