@@ -25,9 +25,18 @@ public struct CrashlyticsLogger: ActionLogger {
             ]
 
             let error = NSError(
-                domain: NSCocoaErrorDomain,
+                domain: "Actions.Error",
                 code: errorAction.code,
                 userInfo: userInfo
+            )
+
+            Crashlytics.crashlytics().record(error: error)
+
+        case is Actions.ApplicationDidReceiveMemoryWarning:
+            let error = NSError(
+                domain: "Actions.ApplicationDidReceiveMemoryWarning",
+                code: 101,
+                userInfo: nil
             )
 
             Crashlytics.crashlytics().record(error: error)
