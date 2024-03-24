@@ -1,4 +1,4 @@
-// swift-tools-version: 5.8
+// swift-tools-version: 5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "UDFCrashlyticsLogger",
     platforms: [
-        .iOS(.v14),
+        .iOS(.v16),
         .macOS(.v11)
     ],
     products: [
@@ -16,7 +16,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/Maks-Jago/SwiftUI-UDF", from: "1.4.2-alpha.1"),
+        .package(url: "https://github.com/Maks-Jago/SwiftUI-UDF", from: "1.4.4-rc.1"),
         .package(url: "https://github.com/firebase/firebase-ios-sdk", from: "10.20.0")
     ],
     targets: [
