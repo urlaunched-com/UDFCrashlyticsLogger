@@ -109,15 +109,6 @@
       }
     },
     {
-      "identity" : "runtime",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/urlaunched-com/Runtime",
-      "state" : {
-        "revision" : "ea112a73f7a8772a92b125ceeaaf61f1844466bd",
-        "version" : "2.2.6"
-      }
-    },
-    {
       "identity" : "swift-collections",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-collections",
@@ -140,8 +131,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Maks-Jago/SwiftUI-UDF",
       "state" : {
-        "revision" : "6232314e416330a7ef68e62e3eadb72875791747",
-        "version" : "1.4.7"
+        "revision" : "65c4b16b0545f27bd3a5b9edae2a59b0538d0e68",
+        "version" : "1.4.3-rc.2"
       }
     }
   ],
