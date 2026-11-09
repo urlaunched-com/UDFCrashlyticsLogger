@@ -6,8 +6,8 @@ import FirebaseCrashlytics
 ///
 /// This logger:
 /// - Filters out irrelevant actions, such as `UpdateFormField` actions.
-/// - Logs errors to Crashlytics with detailed information, including error codes and descriptions.
-/// - Logs standard actions to Crashlytics as simple log entries.
+/// - Logs every action to Crashlytics as a simple log entry, so the action log also includes errors and memory warnings.
+/// - Records errors to Crashlytics as non-fatal errors with detailed information, including error codes and descriptions.
 ///
 /// Usage Example:
 /// ```swift
@@ -55,11 +55,13 @@ public struct CrashlyticsLogger: ActionLogger {
     ///   - action: The action to be logged.
     ///   - description: A string description of the action.
     ///
-    /// This method handles the following cases:
-    /// - Logs `Actions.Error` with the error ID and description to Crashlytics as an `NSError`.
-    /// - Logs `Actions.ApplicationDidReceiveMemoryWarning` as an `NSError`.
-    /// - Logs other actions as simple log entries to Crashlytics.
+    /// Every action is first added to the Crashlytics action log. Then the following cases are also recorded as non-fatal errors:
+    /// - `Actions.Error` with the error ID and description, as an `NSError`.
+    /// - `Actions.ApplicationDidReceiveMemoryWarning`, as an `NSError`.
     public func log(_ action: LoggingAction, description: String) {
+        // Log the action itself, including errors and memory warnings, so it is part of the action log
+        Crashlytics.crashlytics().log(description)
+
         switch action.value {
         case let errorAction as Actions.Error:
             // Prepare error information to log with Crashlytics
@@ -89,8 +91,7 @@ public struct CrashlyticsLogger: ActionLogger {
             Crashlytics.crashlytics().record(error: error)
             
         default:
-            // Log other actions as simple log entries
-            Crashlytics.crashlytics().log(description)
+            break
         }
     }
 }
